@@ -37,4 +37,27 @@ The main characteristic of data warehouse is are as follows :
 <li>ERD is representation of the table in database , it gives a quick overall idea of how differnt entities or tables are connected within the database.</li>
   <li>Here the fields marked with star (*) represent the primary key for that table.</li>
   <li>The line connecting the two tables indicate that a relationship exist between them.</li>
+  <li>Types of relationships :-</li>
+  <ol>
+    <li>One to one:- An instance of an entity is related to only a single instance of another entity</li>
+    <li>One to many:- When a single instance of an entity is related to more than one instance of another entity</li>
+    <li>Many to one:- When more than one instance of an entity is related to only one instance of another entity</li>
+    <li>Many to many:- When more than one instance of an entity is related to more than one instance of another entity</li>
+  </ol>
+</ul>
+  Example-1
+  
+| Employee | office |
+| --- | --- |
+| *EmpName | *office_code |
+| Last_name | city |
+|email|phone|
+
+<ul>
+  <li>From above column we have EmpName and office_code as primary keys in their respective tabel</li>
+  <li>The employee tabel can belong to only one office , while an office can have zero or more employes.</li>
+</ul>
+
+# 6.Star and Snowflake Schema
+![image](https://github.com/Prathama-sanshi/SQL/assets/59955378/c021d721-1743-40b8-8c3d-03258542c617)
 
