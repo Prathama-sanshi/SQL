@@ -59,5 +59,17 @@ The main characteristic of data warehouse is are as follows :
 </ul>
 
 # 6.Star and Snowflake Schema
+Schema :- A schema is an outline of the entire data model and shows how different data sets are connected and how the various attributes of each data set are used for the database design.
+
 ![image](https://github.com/Prathama-sanshi/SQL/assets/59955378/c021d721-1743-40b8-8c3d-03258542c617)
+
+| Star Schema | Snowflake Schema |
+| --- | --- |
+| Simplest schema | extension of star schema |
+| Resembles star structure| Resembles snowflake structure|
+|Good for querying large datasets|Good for querying small datasets|
+|follows top down approach|follows bottom to top approach|
+|Takes more space|Takes less space|
+|Good for datamarts| Good for data warehousing|
+
 
