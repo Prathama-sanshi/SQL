@@ -1,6 +1,26 @@
 # MySQL
+# Index
+<ol>
+ <b> 
+   <li>Database Design and Introduction to MySql</li>
+  <li>Data Warehouse</li>
+  <li>Journey of data in an organization</li>
+  <li>Dimension Model</li>
+  <li>Entity Relationship Diagram(ERD)</li>
+  <li>Star and Snowflake Schema</li>
+  <li>OLTP vs OLAP</li>
+  <li>Constraints</li>
+  <ul>
+    <li>Entity Constraints</li>
+    <li>Referential Constraints</li>
+    <li>Sematic Constraints</li>
+  </ul>
+  
+ 
+ </b>
+</ol>
 
-## 1.Database Design and Introduction to MySql
+# 1.Database Design and Introduction to MySql
 <p>Handling a complex and extensive database has to be planned accordingly , especially when the type of data managed in the organisation is expected to grow massively .This is why there is need for database managment system (DBMS) </p>
 
 ## 2.Data Warehouse
@@ -24,6 +44,9 @@ The main characteristic of data warehouse is are as follows :
 </ol>
 <li>The stored data is either connected to online analytical processing (OAP) for futher processing or creating reports</li>
 </ul>
+
+![image](https://github.com/Prathama-sanshi/SQL/assets/59955378/24ecc033-d3a4-4001-ab1b-2e2e0853c383)
+
 
 ## 4.Dimension Model
  The dimension model is a database structure technique which is used for faster data access.
@@ -82,7 +105,7 @@ Schema :- A schema is an outline of the entire data model and shows how differen
 |Frond end technology-Web Servers, mobile phones,browsers for interaction|BI tools, cognos ,tabula etc|
 |Database design:based on integrity issues and normalisations|Based on dimentional modelling|
 
-# 8.Entity Constrains:-
+# 8.i.Entity Constrains:-
 Constraints are the rules used in mysql to restrict the values that can be stored in column of a database.
 This will ensure data integrity , which is nothing but accuracy and consistancy of data stored in database.
 <ol>
@@ -132,10 +155,44 @@ ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastNam);
   </li>
 </ol>
 
+# 8.ii.Referential Constraints / Foreign key:
+<ul>
+<li>These constraint are used to restrict the values taken by column in one table based on the values that exist in another tabel.</li>
+  <li>It is a rule between two tables, according to this rule, the values that appears as a foreign key in table is valid only if it appears as primary key in tabel of which it appears.</li>
+  <li>A given table can have only one primary key( The latter defined, acts as unique index) but it can have multiple foreign keys.</li>
+</ul>
 
+```
+ALTER TABLE Orders
+ADD FOREIGN KEY (PersonID) REFERENCES Persons(PersonID);
+```
+### OR
+```
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderNumber int NOT NULL,
+    PersonID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
+);
+```
 
+# 8.iii.Sematic Constraints:-
+<ul>
+  
 
+<li>Sematic constraints impose restrictions on tha value in a columns.</li>
+<li>eg: All mobile num in India start with +91 followed by 10 digits.</li>
+</ul>
 
+```
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    user_name VARCHAR(255) NOT NULL,
+    mobile_number VARCHAR(13) NOT NULL,
+    CHECK (mobile_number LIKE '+91__________')
+);
+```
 
 
 
