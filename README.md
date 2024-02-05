@@ -1,4 +1,4 @@
-# MySQL
+# Complete MySQL Theory Documentation
 # Index
 <ol>
  <b> 
@@ -15,7 +15,12 @@
     <li>Referential Constraints</li>
     <li>Sematic Constraints</li>
   </ul>
-  
+  <li>Data Modelling</li>
+  <ul>
+   <li>Data model vs floor plan</li>
+   <li>Database design,creation and manipulation cycles</li>
+   <li>Relational Schemas</li>
+  </ul>
  
  </b>
 </ol>
@@ -193,6 +198,21 @@ CREATE TABLE users (
     CHECK (mobile_number LIKE '+91__________')
 );
 ```
+
+# 9.Data Modelling:-
+Data modelling is the first step in the analytic journey of an organisation.Before we begin to analysing data, you need to ensure that it is stored in a data warehouse in the correct structure , format and shape.
+### Data base design -
+<ol>
+ <li>Design: Creating ERD for a given business requirment</li>
+ <li>Development /implementation:- Creating requirment structure tables and their relationship in database.</li>
+ <li>Manipulaion:- Inserting the record into tables created.</li>
+ <li>Revision:- Testing and refining the structure according to any change in business requirement</li>
+ <li>Production:- Deploying database into production environment so that it remains realtime . </li>
+ <li>Maintenance:- Updating the created schema according to the changes in structure.</li>
+</ol>
+
+### Relational Schema:-
+A relational schemas refers to a structured way of organising information in interconnected tables.It is the way to go about planning any database.
 
 
 
