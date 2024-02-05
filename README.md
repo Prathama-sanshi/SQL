@@ -72,4 +72,70 @@ Schema :- A schema is an outline of the entire data model and shows how differen
 |Takes more space|Takes less space|
 |Good for datamarts| Good for data warehousing|
 
+# 7.OLTP vs OLAP
+
+| Online Transactional Processing System(OLTP)| Online Analytical Processing System(OLAP) |
+| --- | --- |
+| Transactional database is also known as OLTP | Dataware house is also known as OLAP|
+|To perform business transactions|To conduct analysis and decision making|
+|It uses DBMS and service side appliaction-api|Uses ETL(Extract ,transform, and Load|
+|Frond end technology-Web Servers, mobile phones,browsers for interaction|BI tools, cognos ,tabula etc|
+|Database design:based on integrity issues and normalisations|Based on dimentional modelling|
+
+# 8.Entity Constrains:-
+Constraints are the rules used in mysql to restrict the values that can be stored in column of a database.
+This will ensure data integrity , which is nothing but accuracy and consistancy of data stored in database.
+<ol>
+  <li>Unique:- This constraint is used for columns that need unique values. Eg:employee_id </li>
+  
+  ```
+ALTER TABLE table_name
+ADD CONSTRAINT constraint_name UNIQUE(column_list);
+  ```
+
+Note: Unique constraint can co-exist with null constraint in a relational data model .(except for null, all records in that column needs to be unique.)
+  <li>NULL: This constraint is used to determine the columns that can have null values. Eg:- locations- some prefer not give hence marked null.</li>
+  <li>NOT NULL: Ensure that a column cannot have null values.</li>
+  <li>CHECK: Ensures that a column will not accept data values outside the specified range.
+
+  ```
+CREATE TABLE Persons (
+    ID int NOT NULL,
+    LastName varchar(255) NOT NULL,
+    FirstName varchar(255),
+    Age int,
+    CHECK (Age>=18)
+);
+```
+  
+  </li>
+  <li>DEFAULT: specifies a default value of a column if no values is supplies when adding a record to a tabel.
+    
+  ```
+ALTER TABLE Persons
+ALTER City SET DEFAULT 'Sandnes';
+  ```
+  </li>
+  <li>Primary key: Ensures the uniqueness of records within a table.Its purpose is to uniquely identify each record in table.(since a column that is a primary key cannot duplicate and null values , it enforces both the unique and not null constraints automatically)
+    
+  ```
+ALTER TABLE Persons
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID);
+```
+  </li>
+  <li>Composit key: It is a combination of multiple columns and these columns are used to identify all the rows that are involved uniquely.
+    
+   ```
+ALTER TABLE Persons
+ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastNam);
+```
+  </li>
+</ol>
+
+
+
+
+
+
+
 
