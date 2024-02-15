@@ -89,7 +89,8 @@ The main characteristic of data warehouse is are as follows :
 # 6.Star and Snowflake Schema
 Schema :- A schema is an outline of the entire data model and shows how different data sets are connected and how the various attributes of each data set are used for the database design.
 
-![image](https://github.com/Prathama-sanshi/SQL/assets/59955378/c021d721-1743-40b8-8c3d-03258542c617)
+![image](https://github.com/Prathama-sanshi/SQL/assets/59955378/819f462d-6598-4399-8d72-f31517b7e71f)
+
 
 | Star Schema | Snowflake Schema |
 | --- | --- |
